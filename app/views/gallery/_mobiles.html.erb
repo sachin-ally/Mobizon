@@ -1,0 +1,15 @@
+<div class="row">
+    <% @mobiles.each do |mobile|%>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+        <div class="brand_box">
+            <%= image_tag mobile.product_image ,:height=>"100",:width=>"100" %><br /><br />
+            <h3><%= mobile.name %> (<%= mobile.color %>)</h3>
+            <br />
+            <h2><%= mobile.ram %>GB, <%= mobile.rom %>GB</h2>
+            <h2 style="padding-top: 10px"><strong>Rs. <%= mobile.price %></strong></h2>
+            <hr style="width: 80%">
+            <%= button_to 'Add to Cart', line_items_path(:store_id => mobile.id)%> </td>
+        </div>
+    </div>
+    <% end %>
+</div>
